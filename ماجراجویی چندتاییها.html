@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ماجراجویی چندتایی‌ها</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;font-family:Vazirmatn,Tahoma,"Segoe UI",sans-serif;color:#fff;background:#24106b;overflow-x:hidden;transition:background .8s}
+body.t0{background:radial-gradient(circle at 30% 20%,#7b3ff2,#24106b 60%,#0b0530)}
+body.t1{background:radial-gradient(circle at 70% 10%,#3b2a9e,#0a1448 55%,#02051f)}
+body.t2{background:linear-gradient(#ff9a5a,#ff5e8a 55%,#7a3bd1)}
+body.t3{background:linear-gradient(#1e9e5a,#0b5d3a 60%,#052e1c)}
+.scr{display:none;min-height:100vh;padding:16px;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;position:relative}
+.scr.on{display:flex}
+h1{font-size:2.5rem;margin:0;line-height:1.3;transform:perspective(500px) rotateX(16deg);text-shadow:1px 1px 0 #ffb300,2px 2px 0 #f57c00,3px 3px 0 #e65100,4px 4px 0 #bf360c,5px 9px 16px #000a}
+.b{border:0;border-radius:18px;padding:12px 28px;font:inherit;font-size:1.3rem;font-weight:bold;color:#fff;background:#ff5a36;box-shadow:0 7px 0 #b32d12,0 13px 18px #0006;cursor:pointer;transition:transform .1s}
+.b:active{transform:translateY(5px);box-shadow:0 2px 0 #b32d12}
+input{font:inherit;font-size:1.3rem;text-align:center;padding:12px;border-radius:16px;border:0;width:min(300px,90%);box-shadow:inset 0 4px 8px #0004,0 6px 0 #0003;color:#222}
+.card{background:#ffffff26;border:2px solid #ffffff40;backdrop-filter:blur(4px);border-radius:24px;padding:14px;width:100%;max-width:580px;box-shadow:0 18px 30px #0005,inset 0 2px 0 #fff4;transform:perspective(900px) rotateX(3deg)}
+.hd{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:580px;font-weight:bold;font-size:1.15rem}
+.stars span{font-size:1.5rem;filter:grayscale(1) brightness(.6)}.stars span.on{filter:none;text-shadow:0 0 12px gold}
+.q{font-size:1.25rem;line-height:1.8;margin:6px 0 10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:580px}
+.ch{border:0;border-radius:18px;font:inherit;font-size:1.9rem;font-weight:bold;color:#fff;padding:12px;cursor:pointer;box-shadow:0 7px 0 #0004,0 12px 16px #0004}
+.ch:active{transform:translateY(5px)}
+.ch:nth-child(1){background:#ff6b6b}.ch:nth-child(2){background:#4d96ff}.ch:nth-child(3){background:#2fb86a}.ch:nth-child(4){background:#b066e8}
+.ch.x{background:#555!important;opacity:.55;pointer-events:none}
+.msg{min-height:2em;font-size:1.25rem;font-weight:bold}
+.nl{direction:ltr;overflow-x:auto;padding-bottom:4px}@keyframes fi{from{opacity:0}}.nli{position:relative}
+.rk{position:absolute;font-size:2.2rem;transform:translate(-50%,-85%);transition:left .55s cubic-bezier(.3,1.4,.6,1);filter:drop-shadow(0 6px 4px #0006)}
+.rk.fly{animation:hop .6s infinite}@keyframes hop{50%{margin-top:-14px}}
+@keyframes dr{to{stroke-dashoffset:0}}
+.tw{display:flex;flex-direction:column;align-items:center;gap:5px;transform:perspective(700px) rotateX(8deg) rotateY(-10deg);margin:10px 0}
+.fl{display:flex;align-items:center;gap:12px}.fl .cs{display:flex;gap:3px;justify-content:center;min-width:190px}
+.cb{width:28px;height:28px;border-radius:6px;box-shadow:inset -5px -5px 0 #0003,inset 4px 4px 0 #fff5,3px 5px 0 #0005}
+.cb.gh{background:#ffffff25!important;border:2px dashed #fff;box-shadow:none}
+.lb{min-width:54px;font-size:1.5rem;font-weight:bold;background:#0004;border-radius:12px;padding:2px 8px}
+.seq{direction:ltr;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.st{min-width:62px;padding:14px 6px;font-size:1.8rem;font-weight:bold;border-radius:16px;background:linear-gradient(145deg,#c9a46b,#7a5a2e);box-shadow:inset -5px -6px 0 #0004,inset 4px 4px 0 #fff4,0 8px 0 #4a3318,0 14px 14px #0005;transform:perspective(300px) rotateX(12deg)}
+.st.q0{background:linear-gradient(145deg,#ffd54a,#ff9800);animation:pl 1s infinite}@keyframes pl{50%{transform:perspective(300px) rotateX(12deg) scale(1.1)}}
+.fx{position:fixed;inset:0;pointer-events:none;z-index:9;overflow:hidden}
+.cf{position:absolute;top:-30px;animation:fall linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+.bad{animation:sh .45s}@keyframes sh{20%,60%{transform:translateX(-14px)}40%,80%{transform:translateX(14px)}}
+.flash{position:fixed;inset:0;background:radial-gradient(transparent 40%,#f00a);pointer-events:none;z-index:8;animation:fo .6s forwards}@keyframes fo{to{opacity:0}}
+.fy{position:absolute;font-size:2.4rem;animation:flt 5s ease-in-out infinite alternate;opacity:.8}@keyframes flt{to{transform:translateY(-24px) rotate(20deg)}}
+.tl{font-size:1.1rem;opacity:.95;background:#0004;padding:6px 18px;border-radius:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head><body class="t0">
+
+<div class="scr on" id="s0">
+<span class="fy" style="top:8%;right:10%">🚀</span><span class="fy" style="top:15%;left:8%">⭐</span><span class="fy" style="bottom:12%;right:14%">🧱</span><span class="fy" style="bottom:8%;left:10%">🌴</span>
+<h1>ماجراجویی<br>چندتایی‌ها 🚀</h1>
+<div style="font-size:1.2rem">اسمت چیه قهرمان؟</div>
+<input id="nm" placeholder="اسمت را بنویس" maxlength="20" autocomplete="off">
+<button class="b" onclick="go()">شروع بازی!</button>
+<div class="tl">آموزگار: مرضیه ارمغانی</div>
+</div>
+
+<div class="scr" id="s1">
+<div class="hd"><span id="stn"></span><span class="stars" id="stars"></span></div>
+<div class="card" id="card"><div class="q" id="q"></div><div id="vis"></div></div>
+<div class="msg" id="msg"></div>
+<div class="grid" id="ch"></div>
+</div>
+
+<div class="scr" id="s2"><div style="font-size:5rem" id="me"></div><h1 style="font-size:2rem" id="mt"></h1><div id="md" style="font-size:1.3rem"></div><button class="b" onclick="nextStage()">برو بریم!</button></div>
+
+<div class="scr" id="s3"><div style="font-size:6rem">🏆</div><h1 id="en" style="font-size:2rem"></h1><div id="es" style="font-size:1.4rem;line-height:1.9"></div><button class="b" onclick="location.reload()">دوباره بازی کن</button><div class="tl">آموزگار: مرضیه ارمغانی</div></div>
+
+<script>
+const F=n=>String(n).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]),$=i=>document.getElementById(i),R=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const sh=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1]);
+let AC,name="",st=0,qi=0,score=0,tries=0,cur=null,lock=false;
+const ST=[{n:"ماجرای فضایی",e:"🚀",d:"موشک جهنده روی محور عددی می‌پرد. ببین کجا فرود می‌آید!"},{n:"شهر مکعب‌ها",e:"🏗️",d:"طبقه‌ها را بشمار و شماره‌ی بالاترین طبقه را پیدا کن!"},{n:"گنج جنگل",e:"🌴",d:"الگوی سنگ‌ها را کشف کن و جای خالی را پر کن!"}];
+function au(){AC=AC||new(window.AudioContext||window.webkitAudioContext)();return AC}
+function tone(f,t,d,ty,v){try{const a=au(),o=a.createOscillator(),g=a.createGain(),T=a.currentTime+t;o.type=ty;o.frequency.value=f;g.gain.setValueAtTime(v,T);g.gain.exponentialRampToValueAtTime(.001,T+d);o.connect(g);g.connect(a.destination);o.start(T);o.stop(T+d)}catch(e){}}
+function clap(){try{const a=au(),n=a.sampleRate*1.4,b=a.createBuffer(1,n,a.sampleRate),d=b.getChannelData(0);for(let c=0;c<22;c++){const s=Math.floor(Math.random()*n*.8);for(let j=0;j<2500&&s+j<n;j++)d[s+j]+=(Math.random()*2-1)*Math.exp(-j/500)*.5}const o=a.createBufferSource();o.buffer=b;o.connect(a.destination);o.start()}catch(e){}}
+function good(){[523,659,784,1047,1319].forEach((f,i)=>tone(f,i*.09,.35,"triangle",.25));clap()}
+function bad(){tone(180,0,.25,"sawtooth",.15);tone(120,.18,.35,"sawtooth",.15)}
+function confetti(){const fx=document.createElement("div");fx.className="fx";const C=["#ff3b6b","#ffd23f","#3bd16f","#3b9eff","#c06bff","#ff8c1a"];
+for(let i=0;i<90;i++){const e=document.createElement("i");e.className="cf";const s=i%3==0;e.style.cssText=`left:${Math.random()*100}%;background:${C[i%6]};width:${s?6:10}px;height:${s?34:14}px;border-radius:${s?3:2}px;animation-duration:${1.6+Math.random()*1.8}s;animation-delay:${Math.random()*.5}s`;fx.appendChild(e)}
+document.body.appendChild(fx);setTimeout(()=>fx.remove(),4000)}
+function wrong(){bad();const f=document.createElement("div");f.className="flash";document.body.appendChild(f);setTimeout(()=>f.remove(),700);const c=$("card");c.classList.remove("bad");void c.offsetWidth;c.classList.add("bad")}
+
+function show(id){document.querySelectorAll(".scr").forEach(s=>s.classList.toggle("on",s.id==id))}
+function go(){name=$("nm").value.trim();if(!name){$("nm").focus();$("nm").style.outline="4px solid #f33";return}au();intro()}
+function intro(){const s=ST[st];document.body.className="t"+(st+1);$("me").textContent=s.e;$("mt").textContent="مرحله "+F(st+1)+": "+s.n;$("md").textContent=(st==0?"سلام "+name+"! ":"آفرین "+name+"! ")+s.d;show("s2")}
+function nextStage(){qi=0;show("s1");$("stn").textContent=ST[st].e+" "+ST[st].n;ask()}
+function opts(ans,k){let s=new Set([ans]),c=[ans+k,ans-k,ans+1,ans-1,ans+2,ans-2,ans+k+1];for(const x of sh(c)){if(s.size<4&&x>0)s.add(x)}let z=ans+3;while(s.size<4)s.add(z++);return sh([...s])}
+const ks=[0,1,2].map(()=>sh([2,3,4,5,6]).concat([R(2,6),R(2,6),R(2,6)]));
+const NQ=[6,8,6];function stars(){$("stars").innerHTML=Array.from({length:NQ[st]},(_,i)=>`<span class="${i<qi?"on":""}">⭐</span>`).join("")}
+function ask(){lock=false;tries=0;$("msg").textContent="";const k=ks[st][qi];
+stars();
+let ans,h="",q="";
+if(st==0){const n=R(3,Math.min(5,Math.floor(24/k))),N=k*n,W=(N+1)*28,x=i=>14+i*28,col=["#ff6b6b","#ffd93d","#6bcb77","#4d96ff","#c77dff"];ans=N;
+let s=`<svg viewBox="0 0 ${W} 150" style="display:block;width:100%;height:auto"><line x1="4" y1="110" x2="${W-4}" y2="110" stroke="#fff" stroke-width="4" stroke-linecap="round"/>`;
+for(let i=0;i<=N;i++){const m=i%k==0;s+=`<line x1="${x(i)}" y1="104" x2="${x(i)}" y2="116" stroke="#fff" stroke-width="2"/><text id="${i==N?"land":""}" x="${x(i)}" y="142" text-anchor="middle" font-size="25" font-weight="bold" fill="${i==N?"#ffd93d":m?"#ffd93d":"#fff"}">${i==N?"؟":m?F(i):""}</text>`}
+for(let j=1;j<=n;j++){const a=x(k*(j-1)),b=x(k*j);s+=`<path d="M${a},106 Q${(a+b)/2},${106-2*(22+k*5)} ${b},106" fill="none" stroke="${col[j%5]}" stroke-width="5" stroke-linecap="round" pathLength="1" style="stroke-dasharray:1;stroke-dashoffset:1;animation:dr .5s ${j*.65-.4}s forwards"/><circle cx="${(a+b)/2}" cy="${106-(22+k*5)-18}" r="16" fill="${col[j%5]}" style="animation:fi .3s ${j*.65}s both"/><text x="${(a+b)/2}" y="${106-(22+k*5)-10}" text-anchor="middle" font-size="22" font-weight="bold" fill="#222" style="animation:fi .3s ${j*.65}s both">${F(j)}</text>`}
+h=`<div class="nl"><div class="nli"><div class="rk fly" id="rk" style="left:${x(0)/W*100}%;top:${106/150*100}%">🚀</div>${s}</svg></div></div>`;
+q=`موشک از ${F(0)} شروع می‌کند و ${F(n)} بار ${F(k)}تا${F(k)}تا می‌پرد. روی کدام عدد فرود می‌آید؟`;
+cur={W,x,k,n};setTimeout(()=>{for(let j=1;j<=n;j++)setTimeout(()=>{const r=$("rk");if(r)r.style.left=(x(k*j)/W*100)+"%";if(j==n&&r)r.classList.remove("fly")},j*650)},300)}
+else if(st==1){const f=R(3,5);ans=k*f;let rows="";for(let i=f;i>=1;i--){const u=i==f;rows+=`<div class="fl"><div class="cs">${Array.from({length:k},()=>`<span class="cb ${u?"gh":""}" style="background:hsl(${i*55} 85% 58%)"></span>`).join("")}</div><div class="lb">${u?"؟":F(k*i)}</div></div>`}
+h=`<div class="tw">${rows}</div>`;q=`هر طبقه ${F(k)} مکعب دارد. با طبقه‌ی بالایی (خط‌چین)، روی هم چند مکعب می‌شود؟`}
+else{const a=R(1,3),bl=R(1,4);let t=[0,1,2,3,4].map(i=>k*(a+i));ans=t[bl];h=`<div class="seq">${t.map((v,i)=>`<div class="st ${i==bl?"q0":""}">${i==bl?"؟":F(v)}</div>`).join("")}</div>`;q="الگو را کامل کن. به جای ؟ چه عددی می‌آید؟"}
+$("q").textContent=q;$("vis").innerHTML=h;cur=Object.assign(cur||{},{ans});
+$("ch").innerHTML=opts(ans,k).map(o=>`<button class="ch" onclick="pick(this,${o})">${F(o)}</button>`).join("")}
+function pick(b,v){if(lock)return;if(v==cur.ans){lock=true;good();confetti();if(st==0){const l=$("land");if(l){l.textContent=F(v);l.setAttribute("fill","#6bff9a")}}
+if(tries==0)score++;$("msg").textContent=["آفرین "+name+"! 🎉","عالی بود! 🌟","دمت گرم "+name+"! 👏"][R(0,2)];qi++;stars();
+setTimeout(()=>{if(qi<NQ[st])ask();else if(st<2){st++;intro()}else end()},2000)}
+else{tries++;b.classList.add("x");wrong();$("msg").textContent="نزدیک بود! دوباره امتحان کن 💪"}}
+function end(){document.body.className="t0";$("en").textContent="قهرمان چندتایی‌ها، "+name+"!";$("es").innerHTML="تو "+F(score)+" سؤال از "+F(20)+" را بار اول درست جواب دادی!<br>"+(score>=17?"🌟🌟🌟 فوق‌العاده‌ای!":score>=11?"🌟🌟 خیلی خوب بود!":"🌟 باز هم تمرین کن، می‌توانی!");show("s3");good();confetti()}
+$("nm").addEventListener("keydown",e=>{if(e.key=="Enter")go()});
+</script></body></html>
